@@ -190,13 +190,12 @@ export default function Home() {
 
               <div className={styles.heroDescription}>
                 <p className={styles.heroTagline}>
-                  Cette année, STORM est exceptionnellement gratuit !
+                  STORM est exceptionnellement gratuit !
                 </p>
                 <p className={styles.heroSubtext}>
-                  Retrouve toutes les confrontations que tu rêves de voir : pros contre streetballers, créateurs de contenu contre joueurs de Nationale, jeunes espoirs, prodiges hors circuit et talents évoluant à l&apos;étranger… tous réunis dans une ambiance électrique. 💥
-                  <br /><br />
+                  <br />
                   <span>
-                    Confrontations inédites, shows, dotations Adidas, bonne musique pour s&apos;ambiancer… et cette année, l&apos;accès est 100 % gratuit (sauf courtside VIP). Rejoins-nous pour vivre une journée de feu, entre hype, culture et compétition. ⚡️
+                    Des confrontations uniques : pros vs streetballers. Viens vivre une journée électrique entre hype, culture et basket. Des matchs de haut niveau, des shows, des cadeaux Adidas et une ambiance unique. Gagne ta place VIP et tente de repartir avec ton permis de conduire financé ! ⚡️
                   </span>
                   <br /><br />
                   <span>
