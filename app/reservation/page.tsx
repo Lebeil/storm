@@ -26,24 +26,33 @@ export default function ReservationPage() {
         setIsSubmitting(true);
 
         try {
-            // Remplacez cette URL par celle de votre Google Apps Script
             const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzV0RVre7r7q9KumxjOJuw77Wh21wtSO1GAW2eQP9YsdkcvsJKlsI0ZspcfLzPFOhFN/exec';
 
-            const response = await fetch(APPS_SCRIPT_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+            // Créer un formulaire HTML invisible pour contourner les CORS
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = APPS_SCRIPT_URL;
+            form.target = '_blank';
+
+            // Ajouter les champs
+            Object.entries(formData).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                form.appendChild(input);
             });
 
-            const result = await response.json();
+            // Soumettre le formulaire
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
 
-            if (result.success) {
+            // Rediriger après un court délai
+            setTimeout(() => {
                 router.push('/confirmation');
-            } else {
-                alert('Erreur lors de l\'envoi du formulaire: ' + (result.error || 'Erreur inconnue'));
-            }
+            }, 1000);
+
         } catch (error) {
             console.error('Erreur:', error);
             alert('Erreur lors de l\'envoi du formulaire');
