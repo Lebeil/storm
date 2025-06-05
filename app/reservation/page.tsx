@@ -28,33 +28,32 @@ export default function ReservationPage() {
         try {
             const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzV0RVre7r7q9KumxjOJuw77Wh21wtSO1GAW2eQP9YsdkcvsJKlsI0ZspcfLzPFOhFN/exec';
 
-            // Envoi direct avec fetch - AUCUNE POPUP !
-            const response = await fetch(APPS_SCRIPT_URL, {
+            // Approche robuste : FormData pour éviter les problèmes CORS
+            const formDataToSend = new FormData();
+            formDataToSend.append('prenom', formData.prenom);
+            formDataToSend.append('nom', formData.nom);
+            formDataToSend.append('codePostal', formData.codePostal);
+            formDataToSend.append('email', formData.email);
+
+            await fetch(APPS_SCRIPT_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-                mode: 'cors'
+                body: formDataToSend,
+                mode: 'no-cors' // Évite les problèmes CORS
             });
 
-            if (response.ok) {
-                const result = await response.json();
-                if (result.success) {
-                    // Succès - redirection immédiate
-                    router.push('/confirmation');
-                } else {
-                    alert('Erreur: ' + (result.error || 'Erreur inconnue'));
-                }
-            } else {
-                alert('Erreur lors de l\'envoi du formulaire');
-            }
+            // Avec no-cors, on ne peut pas lire la réponse, donc on assume le succès
+            // et on redirige après un court délai
+            setTimeout(() => {
+                router.push('/confirmation');
+            }, 1000);
 
         } catch (error) {
             console.error('Erreur:', error);
             alert('Erreur lors de l\'envoi du formulaire');
         } finally {
-            setIsSubmitting(false);
+            setTimeout(() => {
+                setIsSubmitting(false);
+            }, 1000);
         }
     };
 
