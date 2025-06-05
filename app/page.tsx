@@ -490,6 +490,54 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Adidas Section */}
+      <section className={styles.adidasSection}>
+        <div className="container">
+          <div className={styles.adidasContent}>
+            <div className={styles.adidasLeft}>
+
+              <div className={styles.adidasMainContent}>
+                <h3 className={styles.adidasMainTitle}>LE MEILLEUR DU BASKET FRANÇAIS</h3>
+                <p className={styles.adidasMainSubtitle}>Découvre l&apos;élite du basket français à STORM !</p>
+
+                <div className={styles.adidasDescription}>
+                  <p className={styles.adidasSubtitle}>
+                    Notre partenaire équipementier s&apos;assure que nos athlètes performent toujours au maximum de leur potentiel (et avec du drip).
+                  </p>
+                  <p>
+                    Le seul événement où tu verras s&apos;affronter des <span className={styles.adidasHighlight}>joueurs de l&apos;Euroleague</span> face à des <span className={styles.adidasHighlight}>joueurs de streetball</span> dans une <span className={styles.adidasHighlight}>ambiance hip-hop électrique</span>!
+                  </p>
+
+                  <p>
+                    Tu auras l&apos;opportunité de rencontrer tes <span className={styles.adidasHighlight}>influenceurs, artistes et athlètes préférés</span> et de passer une journée à leurs côtés grâce aux <span className={styles.adidasHighlight}>Places VIP</span>
+                  </p>
+
+                  <p>
+                    Que tu viennes entre amis ou en famille, nous te garantissons <span className={styles.adidasHighlight}>une journée mémorable !</span>
+                  </p>
+                </div>
+
+                <button className={styles.adidasCtaBtn}>
+                  <span className={styles.adidasCtaText}>PLACE VIP</span>
+                </button>
+              </div>
+            </div>
+
+            <div className={styles.adidasRight}>
+              <div className={styles.adidasLogo}>
+                <Image
+                  src="/images/partenaires/adidas.svg"
+                  alt="Adidas"
+                  width={300}
+                  height={150}
+                  className={styles.adidasLogoImage}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Programme Section */}
       <section className={styles.programmeSection}>
@@ -528,6 +576,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Full Screen Image Section */}
+      <section className={styles.fullScreenImageSection}>
+        <div className={styles.fullScreenImageContainer}>
+          <Image
+            src="/images/stormf.jpg"
+            alt="STORM 2025"
+            fill
+            style={{ objectFit: 'cover' }}
+            className={styles.fullScreenImage}
+            priority
+          />
+        </div>
+      </section>
+
+      {/* Uncle Bumpy Section */}
+      <section className={styles.uncleBumpySection}>
+        <div className="container">
+          <div className={styles.uncleBumpyContent}>
+            <h2 className={styles.uncleBumpyMainTitle}>RÉGALE TOI AVEC UNCLE BUMPY</h2>
+
+            <div className={styles.uncleBumpyVideoContainer}>
+              <div className={styles.uncleBumpyVideoWrapper}>
+                <iframe
+                  src="https://www.youtube.com/embed/mVpokazir9Q"
+                  title="Uncle Bumpy - Street Food Louisiane"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className={styles.uncleBumpyVideoIframe}
+                ></iframe>
+              </div>
+            </div>
+
+            <div className={styles.uncleBumpyTextContent}>
+              <h3 className={styles.uncleBumpySubTitle}>LA STREET FOOD INSPIRÉE DE LA LOUISIANE</h3>
+
+              <div className={styles.uncleBumpyDescription}>
+                <p>Tous leurs poulets sont frais et faits maison.</p>
+                <p>
+                  Chaque morceau est plongé dans une marinade secrète aux épices de Louisiane, puis pané et frit à la commande pour garantir un poulet fondant à cœur et une panure ultra croustillante au goût inimitable.
+                </p>
+                <p>
+                  Le temps d&apos;une bouchée, embarquez pour le sud-est des États-Unis où les saveurs sont aussi puissantes que l&apos;ambiance des playgrounds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contest Section */}
       <section className={styles.contest}>
