@@ -490,3 +490,104 @@
         font-size: 0.65rem;
     }
 }
+
+/* iPhone SE et très petits écrans */
+@media (max-width: 375px) {
+    .header {
+        padding: 6px 0;
+    }
+
+    .headerContent {
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .logoSection {
+        gap: 10px;
+        margin-bottom: 0;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .logoImage {
+        height: 35px !important;
+        width: auto !important;
+    }
+
+    .headerPartnerLogo {
+        height: 45px;
+        margin-left: 3px;
+    }
+
+    .partnerLogoHeader {
+        height: 28px !important;
+        width: auto !important;
+    }
+
+    .countdownContainer {
+        gap: 3px;
+        margin-top: 3px;
+    }
+
+    .countdownHeader {
+        margin-bottom: 2px;
+    }
+
+    .countdownEventTitle {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+    }
+
+    .countdownEventDate {
+        font-size: 0.6rem;
+    }
+
+    .countdown {
+        gap: 4px;
+    }
+
+    .countdownCard {
+        padding: 6px 3px 3px 3px;
+        min-width: 32px;
+        border-radius: 8px;
+    }
+
+    .countdownNumber {
+        font-size: 0.9rem;
+    }
+
+    .countdownLabel {
+        font-size: 0.5rem;
+    }
+
+    .countdownSeparator {
+        font-size: 0.9rem;
+        margin: 0 1px;
+    }
+
+    .urgencyText {
+        font-size: 0.6rem;
+    }
+
+    .headerActions {
+        gap: 8px;
+    }
+
+    .vsElement {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+
+    .vsText {
+        font-size: 0.8rem;
+    }
+
+    .headerBtn,
+    .headerBtnPrimary {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}

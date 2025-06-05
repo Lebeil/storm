@@ -2417,6 +2417,103 @@
   }
 }
 
+/* iPhone SE et très petits écrans */
+@media (max-width: 375px) {
+  .hero {
+    padding: 320px 0 30px;
+  }
+
+  .heroContent {
+    padding: 0 15px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .stormText {
+    font-size: 2.5rem;
+  }
+
+  .instadrink {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .heroTagline {
+    font-size: 1rem;
+  }
+
+  .heroSubtext {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .heroFeatures {
+    gap: 15px;
+  }
+
+  .featureCard {
+    padding: 12px;
+  }
+
+  .featureTitle {
+    font-size: 0.8rem;
+  }
+
+  .featureDesc {
+    font-size: 0.7rem;
+  }
+
+  .eventCard {
+    padding: 20px 15px;
+  }
+
+  .countdownCard {
+    padding: 8px 4px 4px 4px;
+    min-width: 38px;
+  }
+
+  .countdownNumber {
+    font-size: 1rem;
+  }
+
+  .countdownLabel {
+    font-size: 0.55rem;
+  }
+
+  .dateMegaNumber {
+    font-size: 2.5rem;
+  }
+
+  .dateMonthEpic {
+    font-size: 0.9rem;
+  }
+
+  .primaryActionBtn,
+  .secondaryActionBtn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+
+  .eventActions {
+    gap: 8px;
+  }
+
+  .statNumber {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.7rem;
+  }
+
+  .partnersGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
 /* TOUT SE PASSE ICI - Styles pour reproduire exactement l'image */
 .stormLocationFullSection {
   display: flex;
