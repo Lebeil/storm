@@ -419,8 +419,9 @@
 
     .logoSection {
         justify-content: center;
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
     }
 
     .logo {
@@ -433,7 +434,9 @@
     }
 
     .headerPartnerLogo {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .partnerLogoHeader {
