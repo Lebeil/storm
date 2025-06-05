@@ -10,7 +10,7 @@
 .header {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 247, 250, 0.95) 100%);
   backdrop-filter: blur(20px);
-  padding: 20px 0;
+  padding: 12px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 60px;
 }
 
 .logo h2 {
@@ -1984,13 +1984,19 @@
 }
 
 @media (max-width: 768px) {
+
+  /* Styles de base restaurés */
   .header {
-    padding: 12px 0;
+    padding: 8px 0;
+    position: relative;
+    top: unset;
+    left: unset;
+    right: unset;
   }
 
   .headerContent {
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     position: static;
   }
 
@@ -2005,28 +2011,75 @@
     justify-content: center;
   }
 
-  .logo h2 {
-    font-size: 1.6rem;
+  /* Clean up duplicated styles and adjust logo positioning */
+  .logoSection {
+    justify-content: center;
+    order: 1;
+    width: 100%;
+    margin-bottom: 0%;
+    padding: 0 10px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .logoImage {
-    height: 55px;
+    height: 45px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .headerPartnerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    /* Réduit pour correspondre au logo principal */
+    margin-left: 5px;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .partnerLogoHeader {
+    height: 35px !important;
+    /* Gardé à 35px pour Adidas */
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  /* Existing mobile styles continued */
+  .headerActions {
+    gap: 10px;
+  }
+
+  /* Réduction des espacements du countdown */
+  .countdownContainer {
+    gap: 4px;
+    margin-top: 5px;
+  }
+
+  .countdownHeader {
+    margin-bottom: 3px;
+  }
+
+  /* ... continue with other existing mobile styles ... */
+  .heroTitle {
+    font-size: 3rem;
   }
 
   .hero {
-    padding: 160px 0 40px;
+    padding: 40px 0 40px;
   }
 
   .heroContent {
     padding: 0 20px;
-  }
-
-  .countdownContainer {
-    gap: 6px;
-  }
-
-  .countdownHeader {
-    margin-bottom: 5px;
   }
 
   .countdownEventTitle {
@@ -2062,48 +2115,6 @@
 
   .urgencyText {
     font-size: 0.65rem;
-  }
-
-  .logoSection {
-    justify-content: center;
-    order: 1;
-  }
-
-  .headerActions {
-    gap: 15px;
-  }
-
-  .vsElement {
-    width: 40px;
-    height: 40px;
-    border-width: 2px;
-  }
-
-  .vsText {
-    font-size: 0.8rem;
-  }
-
-  .headerBtn,
-  .headerBtnPrimary {
-    padding: 10px 20px;
-    font-size: 0.8rem;
-  }
-
-  .heroTitle {
-    font-size: 3rem;
-  }
-
-  .stormText {
-    font-size: 3rem;
-  }
-
-  .theBlock {
-    font-size: 2.4rem;
-    letter-spacing: 4px;
-  }
-
-  .partnershipBadge {
-    padding: 12px 20px;
   }
 
   .instadrink {
@@ -2349,28 +2360,4 @@
   .stormEventItem {
     font-size: 1rem;
   }
-}
-
-.partnerLogoHeader {
-  object-fit: contain;
-  height: auto;
-  filter: brightness(0);
-  /* Rend le logo noir pour la navbar */
-  transition: opacity 0.3s ease;
-  max-width: 100%;
-  display: block;
-}
-
-.partnerLogoHeader:hover {
-  opacity: 0.7;
-}
-
-.headerPartnerLogo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-  margin-left: 5px;
-  background-color: transparent;
-  padding: 0;
 }

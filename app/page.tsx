@@ -211,8 +211,8 @@ export default function Home() {
                   <Image
                     src="/LOGO_INSTADRINK.webp"
                     alt="INSTADRINK"
-                    width={150}
-                    height={100}
+                    width={85}
+                    height={60}
                     className={styles.logoImage}
                   />
                 </a>
@@ -227,8 +227,8 @@ export default function Home() {
                   <Image
                     src="/images/partenaires/adidas.svg"
                     alt="Adidas"
-                    width={150}
-                    height={100}
+                    width={85}
+                    height={60}
                     className={styles.partnerLogoHeader}
                     priority
                   />
@@ -522,7 +522,7 @@ export default function Home() {
       {/* Advantages Section */}
       <section className={styles.advantages}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>LES AVANTAGES INSTA DRIN</h2>
+          <h2 className={styles.sectionTitle}>LES AVANTAGES INSTA DRINK</h2>
           <div className={styles.advantagesGrid}>
             <div className={styles.advantageItem}>
               <div className={styles.advantageIcon}>⭐</div>
