@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://storm2025.com',
+    url: 'https://storm-theta-six.vercel.app/',
     siteName: 'STORM 2025',
     title: 'STORM 2025 - Tournoi Basketball Gratuit | 14 Juin 2025',
     description: 'Événement basketball gratuit exceptionnel ! Pros vs streetballers, shows, dotations Adidas, musique live. Réserve ta place gratuite.',
@@ -37,13 +37,6 @@ export const metadata: Metadata = {
         alt: 'STORM 2025 - Événement Basketball',
         type: 'image/jpeg',
       },
-      {
-        url: '/images/lp.jpeg',
-        width: 1200,
-        height: 800,
-        alt: 'STORM 2025 - Tournoi Basketball',
-        type: 'image/jpeg',
-      }
     ],
   },
 
