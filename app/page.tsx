@@ -790,15 +790,10 @@ export default function Home() {
               <Image
                 src="/LOGO_INSTADRINK.webp"
                 alt="INSTADRINK"
-                width={150}
-                height={50}
+                width={120}
+                height={85}
                 className={styles.footerLogoImage}
               />
-            </div>
-            <div className={styles.footerLinks}>
-              <a href="https://www.idnetwork.io/events/book/ELLPIQVntg1V4d02FUBN" target="_blank" rel="noopener noreferrer">
-                Réserver sur ID Network
-              </a>
             </div>
           </div>
           <div className={styles.footerBottom}>

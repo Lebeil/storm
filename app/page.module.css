@@ -2015,9 +2015,16 @@
 
 .footerContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+}
+
+.footerLogoImage {
+  width: auto;
+  height: auto;
+  max-width: 120px;
+  object-fit: contain;
 }
 
 .footerLogo h3 {
