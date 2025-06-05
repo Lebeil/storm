@@ -28,30 +28,27 @@ export default function ReservationPage() {
         try {
             const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzV0RVre7r7q9KumxjOJuw77Wh21wtSO1GAW2eQP9YsdkcvsJKlsI0ZspcfLzPFOhFN/exec';
 
-            // Créer un formulaire HTML invisible pour contourner les CORS
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = APPS_SCRIPT_URL;
-            form.target = '_blank';
-
-            // Ajouter les champs
-            Object.entries(formData).forEach(([key, value]) => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = value;
-                form.appendChild(input);
+            // Envoi direct avec fetch - AUCUNE POPUP !
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+                mode: 'cors'
             });
 
-            // Soumettre le formulaire
-            document.body.appendChild(form);
-            form.submit();
-            document.body.removeChild(form);
-
-            // Rediriger après un court délai
-            setTimeout(() => {
-                router.push('/confirmation');
-            }, 1000);
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success) {
+                    // Succès - redirection immédiate
+                    router.push('/confirmation');
+                } else {
+                    alert('Erreur: ' + (result.error || 'Erreur inconnue'));
+                }
+            } else {
+                alert('Erreur lors de l\'envoi du formulaire');
+            }
 
         } catch (error) {
             console.error('Erreur:', error);
