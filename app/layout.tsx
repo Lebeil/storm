@@ -31,17 +31,17 @@ export const metadata: Metadata = {
     description: 'Événement basketball gratuit exceptionnel ! Pros vs streetballers, shows, dotations Adidas, musique live. Réserve ta place gratuite.',
     images: [
       {
-        url: 'https://storm2025.com/images/lp.jpeg',
-        width: 1200,
-        height: 800,
-        alt: 'STORM 2025 - Tournoi Basketball',
-        type: 'image/jpeg',
-      },
-      {
-        url: 'https://storm2025.com/images/stormf.jpg',
+        url: '/images/stormf.jpg',
         width: 1200,
         height: 800,
         alt: 'STORM 2025 - Événement Basketball',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/images/lp.jpeg',
+        width: 1200,
+        height: 800,
+        alt: 'STORM 2025 - Tournoi Basketball',
         type: 'image/jpeg',
       }
     ],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: '@instadrink',
     title: 'STORM 2025 - Tournoi Basketball Gratuit | 14 Juin 2025',
     description: 'Événement basketball gratuit exceptionnel ! Pros vs streetballers, shows, dotations Adidas, musique live. Réserve ta place gratuite.',
-    images: ['https://storm2025.com/images/lp.jpeg'],
+    images: ['/images/stormf.jpg'],
   },
 
   // Meta tags génériques
@@ -78,13 +78,13 @@ export const metadata: Metadata = {
     'ICBM': '48.8867, 2.2773',
 
     // WhatsApp spécifique
-    'whatsapp:image': 'https://storm2025.com/images/lp.jpeg',
+    'whatsapp:image': '/images/stormf.jpg',
     'whatsapp:title': 'STORM 2025 - Tournoi Basketball Gratuit',
     'whatsapp:description': 'Événement basketball gratuit exceptionnel ! 14 juin 2025 à Levallois.',
 
     // Slack/Discord
-    'slack:image': 'https://storm2025.com/images/lp.jpeg',
-    'discord:image': 'https://storm2025.com/images/lp.jpeg',
+    'slack:image': '/images/stormf.jpg',
+    'discord:image': '/images/stormf.jpg',
 
     // Article tags
     'article:author': 'INSTADRINK',

@@ -151,8 +151,8 @@ export default function Home() {
     "name": "STORM 2025 - Tournoi Basketball",
     "description": "Événement basketball gratuit mêlant streetball et basketball professionnel. Confrontations inédites, shows, dotations Adidas, bonne musique et ambiance électrique.",
     "image": [
-      "https://storm2025.com/images/lp.jpeg",
-      "https://storm2025.com/images/stormf.jpg"
+      "/images/stormf.jpg",
+      "/images/lp.jpeg"
     ],
     "startDate": "2025-06-14T11:00:00+02:00",
     "endDate": "2025-06-14T21:30:00+02:00",
@@ -386,22 +386,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Landing Page Image Section */}
-      <section className={styles.lpImageSection}>
-        <div className="container">
-          <div className={styles.lpImageContainer}>
-            <Image
-              src="/images/lp.jpeg"
-              alt="STORM 2025 - Événement Basketball"
-              width={1200}
-              height={800}
-              className={styles.lpImage}
-              priority
-            />
           </div>
         </div>
       </section>
