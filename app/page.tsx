@@ -307,7 +307,15 @@ export default function Home() {
                   Cette année, STORM est exceptionnellement gratuit !
                 </p>
                 <p className={styles.heroSubtext}>
-                  Partagez un moment inoubliable en famille ou entre amis dans une ambiance 100% hip-hop et sport !
+                  Retrouve toutes les confrontations que tu rêves de voir : pros contre streetballers, créateurs de contenu contre joueurs de Nationale, jeunes espoirs, prodiges hors circuit et talents évoluant à l&apos;étranger… tous réunis dans une ambiance électrique. 💥
+                  <br /><br />
+                  <span>
+                    Confrontations inédites, shows, dotations Adidas, bonne musique pour s&apos;ambiancer… et cette année, l&apos;accès est 100 % gratuit (sauf courtside VIP). Rejoins-nous pour vivre une journée de feu, entre hype, culture et compétition. ⚡️
+                  </span>
+                  <br /><br />
+                  <span>
+                    Ramène ton meilleur outfit et ne manque surtout pas cette célébration exceptionnelle. 🌪️
+                  </span>
                 </p>
               </div>
 
@@ -339,8 +347,26 @@ export default function Home() {
             <div className={styles.heroSidebar}>
               <div className={styles.eventCard}>
                 <div className={styles.eventCardHeader}>
-                  <h3>Événement Gratuit</h3>
-                  <div className={styles.eventDate}>14 JUIN 2025</div>
+                  <h3>Tournoi basketball</h3>
+                  <div className={styles.eventDate}>
+                    <div className={styles.dateEpic}>
+                      <div className={styles.dateFireEffect}>
+                        <div className={styles.dateNeonContainer}>
+                          <div className={styles.dateHorizontal}>
+                            <div className={styles.dateMegaNumber}>14</div>
+                            <div className={styles.dateMonthEpic}>JUIN</div>
+                          </div>
+                        </div>
+                        <div className={styles.dateExplosionBanner}>
+                          <span className={styles.bangLeft}>💥</span>
+                          <span className={styles.dateUrgencyText}>DATE HISTORIQUE</span>
+                          <span className={styles.bangRight}>💥</span>
+                        </div>
+                      </div>
+                      <div className={styles.dateShockwave}></div>
+                      <div className={styles.dateParticles}></div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className={styles.eventStats}>
@@ -502,6 +528,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Contest Section */}
       <section className={styles.contest}>
         <div className={styles.contestBackground}>
@@ -631,6 +658,32 @@ export default function Home() {
 
       </section>
 
+      {/* FAQ Section */}
+      <section className={styles.faqSection}>
+        <div className="container">
+          <h2 className={styles.faqTitle}>FAQ</h2>
+
+          <div className={styles.faqGrid}>
+            <div className={styles.faqItem}>
+              <h3 className={styles.faqQuestion}>
+                Y a-t-il des restrictions d&apos;âge pour assister à l&apos;événement ?
+              </h3>
+              <p className={styles.faqAnswer}>
+                Le tournoi est ouvert à tous les âges, mais veuillez noter que les enfants de <span className={styles.faqHighlight}>moins de 12 ans</span> doivent être <span className={styles.faqHighlight}>accompagnés d&apos;un adulte</span>.
+              </p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3 className={styles.faqQuestion}>
+                Comment accéder au gymnase ?
+              </h3>
+              <p className={styles.faqAnswer}>
+                C&apos;est très simple, il suffit de prendre le <span className={styles.faqHighlight}>Métro 3</span> et descendre à l&apos;arrêt <span className={styles.faqHighlight}>Pont de Levallois Bécon</span>, le gymnase se situe à 4 minutes à pieds de la station de Métro.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className={styles.footer}>
