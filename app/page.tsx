@@ -199,7 +199,7 @@ export default function Home() {
                   </span>
                   <br /><br />
                   <span>
-                    Ramène ton meilleur outfit et ne manque surtout pas cette célébration exceptionnelle. 🌪️
+                    Ramène ton meilleur outfit et vis l’événement à 100%. 🌪️
                   </span>
                 </p>
               </div>
