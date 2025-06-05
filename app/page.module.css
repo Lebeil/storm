@@ -1914,6 +1914,48 @@
   margin-bottom: 10px;
 }
 
+/* Landing Page Image Section */
+.lpImageSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.lpImageContainer {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.lpImage {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  filter: brightness(1.05) contrast(1.1);
+}
+
+.lpImage:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1) contrast(1.15);
+}
+
+@media (max-width: 768px) {
+  .lpImageSection {
+    padding: 40px 0;
+  }
+
+  .lpImageContainer {
+    border-radius: 15px;
+    margin: 0 20px;
+  }
+
+  .lpImage {
+    border-radius: 15px;
+  }
+}
+
 /* Partners Section */
 .partners {
   background-color: #090057;

@@ -144,8 +144,65 @@ export default function Home() {
     }
   };
 
+  // Rich Snippet pour l'événement STORM 2025
+  const eventStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "STORM 2025 - Tournoi Basketball",
+    "description": "Événement basketball gratuit mêlant streetball et basketball professionnel. Confrontations inédites, shows, dotations Adidas, bonne musique et ambiance électrique.",
+    "image": [
+      "https://storm2025.com/images/lp.jpeg",
+      "https://storm2025.com/images/stormf.jpg"
+    ],
+    "startDate": "2025-06-14T11:00:00+02:00",
+    "endDate": "2025-06-14T21:30:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Palais des Sports Marcel Cerdan",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "141 Rue Danton",
+        "addressLocality": "Levallois-Perret",
+        "postalCode": "92300",
+        "addressCountry": "FR"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "INSTADRINK",
+      "url": "https://storm2025.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://storm2025.com/reservation",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2024-12-01T00:00:00+02:00"
+    },
+    "performer": [
+      {
+        "@type": "SportsTeam",
+        "name": "Joueurs Professionnels"
+      },
+      {
+        "@type": "SportsTeam",
+        "name": "Streetballers"
+      }
+    ],
+    "sport": "Basketball",
+    "isAccessibleForFree": true
+  };
+
   return (
     <div className={styles.page}>
+      {/* Rich Snippet JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventStructuredData) }}
+      />
 
 
       {/* Hero Section */}
@@ -329,6 +386,22 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Landing Page Image Section */}
+      <section className={styles.lpImageSection}>
+        <div className="container">
+          <div className={styles.lpImageContainer}>
+            <Image
+              src="/images/lp.jpeg"
+              alt="STORM 2025 - Événement Basketball"
+              width={1200}
+              height={800}
+              className={styles.lpImage}
+              priority
+            />
           </div>
         </div>
       </section>
