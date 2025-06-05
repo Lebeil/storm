@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from "./page.module.css";
 
 // Composant Compte à rebours amélioré
@@ -201,8 +202,37 @@ export default function Home() {
           <div className={styles.headerContent}>
             <div className={styles.logoSection}>
               <div className={styles.logo}>
-                <h2>I.D</h2>
-                <div className={styles.logoSubtext}>Network</div>
+                <a
+                  href="https://www.idnetwork.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.logoLink}
+                >
+                  <Image
+                    src="/LOGO_INSTADRINK.webp"
+                    alt="INSTADRINK"
+                    width={150}
+                    height={100}
+                    className={styles.logoImage}
+                  />
+                </a>
+              </div>
+              <div className={styles.headerPartnerLogo}>
+                <a
+                  href="https://www.adidas.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.logoLink}
+                >
+                  <Image
+                    src="/images/partenaires/adidas.svg"
+                    alt="Adidas"
+                    width={150}
+                    height={100}
+                    className={styles.partnerLogoHeader}
+                    priority
+                  />
+                </a>
               </div>
             </div>
 
@@ -255,12 +285,12 @@ export default function Home() {
             <div className={styles.heroMain}>
               <div className={styles.heroTitleSection}>
                 <div className={styles.heroPreTitle}>
-                  <span className={styles.eventYear}>2025</span>
                   <span className={styles.eventType}>BASKETBALL EVENT</span>
                 </div>
 
                 <h1 className={styles.heroTitle}>
-                  <span className={styles.stormText}>STORM</span>
+
+                  <span className={styles.stormText}>STORM 2025</span>
                 </h1>
 
                 <div className={styles.partnershipSection}>
@@ -274,10 +304,10 @@ export default function Home() {
 
               <div className={styles.heroDescription}>
                 <p className={styles.heroTagline}>
-                  L&apos;événement basketball le plus attendu de l&apos;année
+                  Cette année, STORM est exceptionnellement gratuit !
                 </p>
                 <p className={styles.heroSubtext}>
-                  Pros vs Street • Créateurs vs Joueurs • Culture Urbaine • Shows Live
+                  Partagez un moment inoubliable en famille ou entre amis dans une ambiance 100% hip-hop et sport !
                 </p>
               </div>
 
@@ -389,6 +419,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners Section */}
+      <section className={styles.partners}>
+        <div className="container">
+          <h2 className={styles.sectionTitle}>PARTENAIRES</h2>
+          <div className={styles.partnersGrid}>
+            <div className={styles.partnerLogo}>
+              <Image
+                src="/images/partenaires/adidas.svg"
+                alt="Adidas"
+                width={180}
+                height={80}
+                className={styles.partnerLogoImage}
+                priority
+              />
+            </div>
+            <div className={styles.partnerLogo}>
+              <Image
+                src="/images/partenaires/unclebumpy.png"
+                alt="UNCLE BUMPY"
+                width={180}
+                height={60}
+                className={styles.partnerLogoImage}
+              />
+            </div>
+            <div className={styles.partnerLogo}>
+              <Image
+                src="/LOGO_INSTADRINK.webp"
+                alt="INSTA DRINK"
+                width={180}
+                height={60}
+                className={styles.partnerLogoImage}
+              />
+            </div>
+            <div className={styles.partnerLogo}>
+              <Image
+                src="/images/partenaires/storm-bllanc.png"
+                alt="Storm"
+                width={150}
+                height={70}
+                className={`${styles.partnerLogoImage} ${styles.stormLogo}`}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contest Section */}
       <section className={styles.contest}>
         <div className={styles.contestBackground}>
@@ -464,55 +540,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Event Info Section */}
-      <section className={styles.eventInfo}>
-        <div className="container">
-          <div className={styles.eventInfoGrid}>
-            <div className={styles.eventDetails}>
-              <h2 className={styles.sectionTitle}>STORM 2025</h2>
-              <h3 className={styles.eventSubtitle}>L&apos;ÉVÉNEMENT BASKET LE PLUS HYPE DE L&apos;ÉTÉ</h3>
-              <p className={styles.eventDescription}>
-                Le 14 juin au Palais des Sports de Levallois – Marcel Cerdan, Storm réunit toute la famille basket et la culture urbaine. 🏀
-              </p>
-              <p className={styles.eventDescription}>
-                Retrouve toutes les confrontations que tu rêves de voir : pros contre streetballers, créateurs de contenu contre joueurs de Nationale, jeunes espoirs, prodiges hors circuit et talents évoluant à l&apos;étranger…
-              </p>
-              <div className={styles.eventMeta}>
-                <p><strong>Date :</strong> Samedi 14 juin 2025</p>
-                <p><strong>Horaires :</strong> 11h00 - 21h30</p>
-                <p><strong>Lieu :</strong> Palais des Sports Marcel Cerdan</p>
-                <p><strong>Adresse :</strong> 141 Rue Danton, 92300 Levallois-Perret</p>
-              </div>
+      {/* TOUT SE PASSE ICI Section - Full width like your image */}
+      <section className={styles.stormLocationFullSection}>
+
+        {/* Carte Google Maps - Côté gauche large */}
+        <div className={styles.stormMapSide}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10495.574985574986!2d2.2773187438236856!3d48.88674575328203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f82c7cbad69%3A0x93dce518a497097c!2s141%20Rue%20Danton%2C%2092300%20Levallois-Perret!5e0!3m2!1sfr!2sfr!4v1722266154275!5m2!1sfr!2sfr"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Palais des Sports Marcel Cerdan - Levallois-Perret"
+          ></iframe>
+        </div>
+
+        {/* Panneau violet "TOUT SE PASSE ICI" - Côté droit */}
+        <div className={styles.stormInfoSide}>
+
+          <h1 className={styles.stormMainHeading}>
+            TOUT SE<br />
+            PASSE ICI !
+          </h1>
+
+          <div className={styles.stormVenueInfo}>
+            <div className={styles.stormVenueLine}>
+              <span className={styles.stormPinIcon}>📍</span>
+              <span className={styles.stormVenueText}>Le gymnase : Palais des Sports Marcel Cerdan</span>
             </div>
-            <div className={styles.mapContainer}>
-              <div className={styles.mapPlaceholder}>
-                <div className={styles.mapIcon}>📍</div>
-                <p>Lieu et date</p>
-              </div>
+
+            <div className={styles.stormDivider}>-</div>
+
+            <div className={styles.stormAddressText}>
+              141 Rue Danton, 92300 Levallois-Perret
             </div>
           </div>
+
+          <div className={styles.stormEventInfo}>
+            <div className={styles.stormEventItem}>
+              <span className={styles.stormDateIcon}>📅</span>
+              <span className={styles.stormEventText}>Date : samedi 14 juin 2025</span>
+            </div>
+
+            <div className={styles.stormEventItem}>
+              <span className={styles.stormTimeIcon}>⏰</span>
+              <span className={styles.stormEventText}>Horaire : 11h00 - 21H30</span>
+            </div>
+          </div>
+
         </div>
+
       </section>
 
-      {/* Partners Section */}
-      <section className={styles.partners}>
-        <div className="container">
-          <h2 className={styles.sectionTitle}>PARTENAIRES</h2>
-          <div className={styles.partnersGrid}>
-            <div className={styles.partnerLogo}>adidas</div>
-            <div className={styles.partnerLogo}>UNCLE BUMPY</div>
-            <div className={styles.partnerLogo}>INSTA DRINK</div>
-            <div className={styles.partnerLogo}>STORM</div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.footerContent}>
             <div className={styles.footerLogo}>
-              <h3>I.D</h3>
+              <Image
+                src="/LOGO_INSTADRINK.webp"
+                alt="INSTADRINK"
+                width={150}
+                height={50}
+                className={styles.footerLogoImage}
+              />
             </div>
             <div className={styles.footerLinks}>
               <a href="https://www.idnetwork.io/events/book/ELLPIQVntg1V4d02FUBN" target="_blank" rel="noopener noreferrer">
