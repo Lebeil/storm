@@ -40,7 +40,7 @@ export default function ConfirmationPage() {
                     </div>
 
                     <Link href="/" className={styles.backBtn}>
-                        ← Retour à l'accueil
+                        ← Retour à l&apos;accueil
                     </Link>
                 </div>
             </div>
