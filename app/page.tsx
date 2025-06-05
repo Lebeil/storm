@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import styles from "./page.module.css";
 
-// Composant Compte à rebours
+// Composant Compte à rebours amélioré
 function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -11,6 +11,7 @@ function Countdown() {
     minutes: 0,
     seconds: 0
   });
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date('2025-06-14T11:00:00').getTime();
@@ -20,52 +21,91 @@ function Countdown() {
       const difference = targetDate - now;
 
       if (difference > 0) {
-        setTimeLeft({
+        const newTimeLeft = {
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000)
-        });
+        };
+
+        // Animation pour les changements de secondes
+        if (newTimeLeft.seconds !== timeLeft.seconds) {
+          setIsAnimating(true);
+          setTimeout(() => setIsAnimating(false), 300);
+        }
+
+        setTimeLeft(newTimeLeft);
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [timeLeft.seconds]);
 
   return (
-    <div className={styles.countdown}>
-      <div className={styles.countdownItem}>
-        <span className={styles.countdownNumber}>{timeLeft.days.toString().padStart(2, '0')}</span>
-        <span className={styles.countdownLabel}>Jours</span>
+    <div className={styles.countdownContainer}>
+      <div className={styles.countdownHeader}>
+        <span className={styles.countdownEventTitle}>STORM 2025</span>
+        <span className={styles.countdownEventDate}>14 JUIN 2025</span>
       </div>
-      <div className={styles.countdownItem}>
-        <span className={styles.countdownNumber}>{timeLeft.hours.toString().padStart(2, '0')}</span>
-        <span className={styles.countdownLabel}>Heures</span>
+      <div className={styles.countdown}>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownCard}>
+            <span className={styles.countdownNumber}>{timeLeft.days.toString().padStart(2, '0')}</span>
+            <div className={styles.countdownDivider}></div>
+            <span className={styles.countdownLabel}>JOURS</span>
+          </div>
+        </div>
+        <div className={styles.countdownSeparator}>:</div>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownCard}>
+            <span className={styles.countdownNumber}>{timeLeft.hours.toString().padStart(2, '0')}</span>
+            <div className={styles.countdownDivider}></div>
+            <span className={styles.countdownLabel}>HEURES</span>
+          </div>
+        </div>
+        <div className={styles.countdownSeparator}>:</div>
+        <div className={styles.countdownItem}>
+          <div className={styles.countdownCard}>
+            <span className={styles.countdownNumber}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+            <div className={styles.countdownDivider}></div>
+            <span className={styles.countdownLabel}>MIN</span>
+          </div>
+        </div>
+        <div className={styles.countdownSeparator}>:</div>
+        <div className={styles.countdownItem}>
+          <div className={`${styles.countdownCard} ${isAnimating ? styles.countdownAnimating : ''}`}>
+            <span className={styles.countdownNumber}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+            <div className={styles.countdownDivider}></div>
+            <span className={styles.countdownLabel}>SEC</span>
+          </div>
+        </div>
       </div>
-      <div className={styles.countdownItem}>
-        <span className={styles.countdownNumber}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
-        <span className={styles.countdownLabel}>Minutes</span>
-      </div>
-      <div className={styles.countdownItem}>
-        <span className={styles.countdownNumber}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
-        <span className={styles.countdownLabel}>Secondes</span>
+      <div className={styles.countdownUrgency}>
+        <span className={styles.urgencyText}>⚡ PLACES LIMITÉES ⚡</span>
       </div>
     </div>
   );
 }
 
-// Composant Formulaire de jeu concours
+// Composant Formulaire de jeu concours amélioré
 function ContestForm() {
   const [formData, setFormData] = useState({
     firstName: '',
     email: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Logique de soumission du formulaire
-    console.log('Formulaire soumis:', formData);
-    alert('Merci pour votre participation ! Bonne chance 🍀');
+    setIsSubmitting(true);
+
+    // Simulation d'envoi
+    setTimeout(() => {
+      console.log('Formulaire soumis:', formData);
+      alert('Merci pour votre participation ! Bonne chance 🍀');
+      setIsSubmitting(false);
+      setFormData({ firstName: '', email: '' });
+    }, 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -76,33 +116,79 @@ function ContestForm() {
   };
 
   return (
-    <form className={styles.contestForm} onSubmit={handleSubmit}>
-      <div className={styles.formGroup}>
-        <input
-          type="text"
-          name="firstName"
-          placeholder="Prénom"
-          value={formData.firstName}
-          onChange={handleChange}
-          required
-          className={styles.formInput}
-        />
+    <div className={styles.contestFormContainer}>
+      <div className={styles.formHeader}>
+        <h3 className={styles.formTitle}>Participe maintenant !</h3>
+        <p className={styles.formSubtitle}>Remplis le formulaire et tente ta chance</p>
       </div>
-      <div className={styles.formGroup}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Adresse e-mail"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className={styles.formInput}
-        />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        TENTE TA CHANCE
-      </button>
-    </form>
+
+      <form className={styles.contestForm} onSubmit={handleSubmit}>
+        <div className={styles.formGroup}>
+          <div className={styles.inputWrapper}>
+            <span className={styles.inputIcon}>👤</span>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="Ton prénom"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              className={styles.formInput}
+            />
+          </div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <div className={styles.inputWrapper}>
+            <span className={styles.inputIcon}>📧</span>
+            <input
+              type="email"
+              name="email"
+              placeholder="Ton adresse e-mail"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className={styles.formInput}
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className={`btn btn-primary ${styles.submitBtn} ${isSubmitting ? styles.submitting : ''}`}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <>
+              <span className={styles.spinner}></span>
+              PARTICIPATION EN COURS...
+            </>
+          ) : (
+            <>
+              <span className={styles.btnIcon}>🚀</span>
+              TENTE TA CHANCE
+            </>
+          )}
+        </button>
+
+        <div className={styles.formFooter}>
+          <p className={styles.legalText}>
+            En participant, tu acceptes le règlement du jeu-concours
+          </p>
+          <div className={styles.socialSharing}>
+            <span>Partage aussi sur :</span>
+            <div className={styles.socialButtons}>
+              <a href="#" className={styles.socialBtn}>
+                <span>📱</span> Instagram
+              </a>
+              <a href="#" className={styles.socialBtn}>
+                <span>📘</span> Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }
 
@@ -113,38 +199,156 @@ export default function Home() {
       <header className={styles.header}>
         <div className="container">
           <div className={styles.headerContent}>
-            <div className={styles.logo}>
-              <h2>I.D</h2>
+            <div className={styles.logoSection}>
+              <div className={styles.logo}>
+                <h2>I.D</h2>
+                <div className={styles.logoSubtext}>Network</div>
+              </div>
             </div>
-            <Countdown />
+
+            <div className={styles.headerCenter}>
+              <div className={styles.headerActions}>
+                <button className={styles.headerBtn}>
+                  <span className={styles.headerBtnIcon}>🎫</span>
+                  <span>Billets VIP</span>
+                </button>
+
+                <div className={styles.vsElement}>
+                  <span className={styles.vsText}>VS</span>
+                  <div className={styles.vsGlow}></div>
+                </div>
+
+                <button className={styles.headerBtnPrimary}>
+                  <span className={styles.headerBtnIcon}>🏆</span>
+                  <span>Concours</span>
+                </button>
+              </div>
+            </div>
+
+            <div className={styles.headerRight}>
+              <Countdown />
+            </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.heroBackground}>
+          <div className={styles.heroGradient}></div>
+          <div className={styles.basketballCourt}></div>
+          <div className={styles.basketballElements}>
+            <div className={styles.basketball}></div>
+            <div className={styles.basketball}></div>
+            <div className={styles.basketball}></div>
+          </div>
+          <div className={styles.floatingElements}>
+            <div className={styles.floatingElement}></div>
+            <div className={styles.floatingElement}></div>
+            <div className={styles.floatingElement}></div>
+            <div className={styles.floatingElement}></div>
+          </div>
+        </div>
+
         <div className="container">
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>
-              STORM THE BLOCK<br />
-              <span className={styles.heroSubtitle}>X INSTADRINK</span>
-            </h1>
-            <div className={styles.heroTags}>
-              <span className={styles.tag}>BASKET</span>
-              <span className={styles.tag}>DJ SET</span>
-              <span className={styles.tag}>FOODTRUCK</span>
+            <div className={styles.heroMain}>
+              <div className={styles.heroTitleSection}>
+                <div className={styles.heroPreTitle}>
+                  <span className={styles.eventYear}>2025</span>
+                  <span className={styles.eventType}>BASKETBALL EVENT</span>
+                </div>
+
+                <h1 className={styles.heroTitle}>
+                  <span className={styles.stormText}>STORM</span>
+                  <span className={styles.theBlock}>THE BLOCK</span>
+                </h1>
+
+                <div className={styles.partnershipSection}>
+                  <div className={styles.partnershipLabel}>Présenté par</div>
+                  <div className={styles.partnershipBadge}>
+                    <span className={styles.instadrink}>INSTADRINK</span>
+                    <div className={styles.partnershipGlow}></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.heroDescription}>
+                <p className={styles.heroTagline}>
+                  L&apos;événement basketball le plus attendu de l&apos;année
+                </p>
+                <p className={styles.heroSubtext}>
+                  Pros vs Street • Créateurs vs Joueurs • Culture Urbaine • Shows Live
+                </p>
+              </div>
+
+              <div className={styles.heroFeatures}>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIcon}>🏀</div>
+                  <div className={styles.featureContent}>
+                    <span className={styles.featureTitle}>BASKET</span>
+                    <span className={styles.featureDesc}>Matchs épiques</span>
+                  </div>
+                </div>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIcon}>🎵</div>
+                  <div className={styles.featureContent}>
+                    <span className={styles.featureTitle}>DJ SET</span>
+                    <span className={styles.featureDesc}>Musique live</span>
+                  </div>
+                </div>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureIcon}>🍔</div>
+                  <div className={styles.featureContent}>
+                    <span className={styles.featureTitle}>FOODTRUCK</span>
+                    <span className={styles.featureDesc}>Street food</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className={styles.heroDescription}>
-              UNE JOURNÉE DE OUF, RÉSERVÉE AUX V VRAIS
-            </p>
-            <div className={styles.heroButtons}>
-              <button className="btn btn-primary">JE RÉSERVE MA PLACE</button>
-              <button className="btn btn-secondary">GAGNE 3 PLACES VIP</button>
-            </div>
-          </div>
-          <div className={styles.heroQr}>
-            <div className={styles.qrCode}>
-              <div className={styles.qrPlaceholder}>QR</div>
+
+            <div className={styles.heroSidebar}>
+              <div className={styles.eventCard}>
+                <div className={styles.eventCardHeader}>
+                  <h3>Événement Gratuit</h3>
+                  <div className={styles.eventDate}>14 JUIN 2025</div>
+                </div>
+
+                <div className={styles.eventStats}>
+                  <div className={styles.statCard}>
+                    <div className={styles.statNumber}>100%</div>
+                    <div className={styles.statLabel}>GRATUIT</div>
+                  </div>
+                  <div className={styles.statCard}>
+                    <div className={styles.statNumber}>10H</div>
+                    <div className={styles.statLabel}>DE SHOW</div>
+                  </div>
+                  <div className={styles.statCard}>
+                    <div className={styles.statNumber}>3</div>
+                    <div className={styles.statLabel}>PLACES VIP</div>
+                  </div>
+                </div>
+
+                <div className={styles.eventLocation}>
+                  <div className={styles.locationIcon}>📍</div>
+                  <div className={styles.locationInfo}>
+                    <span className={styles.locationName}>Palais des Sports</span>
+                    <span className={styles.locationAddress}>Marcel Cerdan, Levallois</span>
+                  </div>
+                </div>
+
+                <div className={styles.eventActions}>
+                  <button className={styles.primaryActionBtn}>
+                    <span className={styles.actionBtnIcon}>🎫</span>
+                    <span>Réserver ma place</span>
+                    <div className={styles.actionBtnGlow}></div>
+                  </button>
+                  <button className={styles.secondaryActionBtn}>
+                    <span className={styles.actionBtnIcon}>🏆</span>
+                    <span>Gagner 3 places VIP</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -152,14 +356,54 @@ export default function Home() {
 
       {/* Contest Section */}
       <section className={styles.contest}>
+        <div className={styles.contestBackground}>
+          <div className={styles.contestPattern}></div>
+        </div>
         <div className="container">
           <div className={styles.contestContent}>
-            <div className={styles.contestInfo}>
-              <div className={styles.contestIcon}>🎁</div>
-              <h2 className={styles.contestTitle}>TENTE DE GAGNER<br />3 PLACES VIP</h2>
-              <p className={styles.contestDescription}>Participé ici & sur Instagram</p>
+            <div className={styles.contestInfoSection}>
+              <div className={styles.contestBadge}>
+                <span className={styles.contestBadgeText}>JEU CONCOURS</span>
+              </div>
+              <div className={styles.contestIcon}>
+                <div className={styles.giftBox}>
+                  <div className={styles.giftLid}></div>
+                  <div className={styles.giftBase}></div>
+                  <div className={styles.giftRibbon}></div>
+                </div>
+              </div>
+              <h2 className={styles.contestTitle}>
+                <span className={styles.contestTitleMain}>TENTE DE GAGNER</span>
+                <span className={styles.contestTitleHighlight}>3 PLACES VIP</span>
+              </h2>
+              <div className={styles.contestDescription}>
+                <p>Participe ici & sur Instagram</p>
+                <div className={styles.socialProof}>
+                  <span className={styles.participants}>+500 participants</span>
+                  <div className={styles.socialIcons}>
+                    <span className={styles.socialIcon}>📱</span>
+                    <span className={styles.socialIcon}>📸</span>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.prizeDetails}>
+                <div className={styles.prizeItem}>
+                  <span className={styles.prizeIcon}>🏀</span>
+                  <span>Accès VIP Courtside</span>
+                </div>
+                <div className={styles.prizeItem}>
+                  <span className={styles.prizeIcon}>🍽️</span>
+                  <span>Buffet inclus</span>
+                </div>
+                <div className={styles.prizeItem}>
+                  <span className={styles.prizeIcon}>⭐</span>
+                  <span>Loges privées</span>
+                </div>
+              </div>
             </div>
-            <ContestForm />
+            <div className={styles.contestFormSection}>
+              <ContestForm />
+            </div>
           </div>
         </div>
       </section>
