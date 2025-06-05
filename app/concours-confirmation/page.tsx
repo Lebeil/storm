@@ -17,8 +17,8 @@ export default function ConcoursConfirmationPage() {
 
                     <div className={styles.infoBox}>
                         <div className={styles.infoTitle}>📧 Notification par email</div>
-                        <p>Si vous êtes sélectionné(e) comme gagnant(e), <strong>vous serez averti(e) par email</strong> à l'adresse que vous avez fournie.</p>
-                        <p>Le tirage au sort aura lieu <strong>le 10 juin 2025</strong>, quelques jours avant l'événement.</p>
+                        <p>Si vous êtes sélectionné(e) comme gagnant(e), <strong>vous serez averti(e) par email</strong> à l&apos;adresse que vous avez fournie.</p>
+                        <p>Le tirage au sort aura lieu <strong>le 10 juin 2025</strong>, quelques jours avant l&apos;événement.</p>
                     </div>
 
                     <div className={styles.prizeInfo}>
@@ -32,7 +32,7 @@ export default function ConcoursConfirmationPage() {
                     </div>
 
                     <div className={styles.socialReminder}>
-                        <p><strong>N'oubliez pas :</strong> Partagez aussi sur Instagram pour doubler vos chances !</p>
+                        <p><strong>N&apos;oubliez pas :</strong> Partagez aussi sur Instagram pour doubler vos chances !</p>
                         <div className={styles.socialButtons}>
                             <a href="#" className={styles.socialBtn}>
                                 📱 Partager sur Instagram
@@ -44,7 +44,7 @@ export default function ConcoursConfirmationPage() {
                     </div>
 
                     <Link href="/" className={styles.backBtn}>
-                        ← Retour à l'accueil
+                        ← Retour à l&apos;accueil
                     </Link>
                 </div>
             </div>
