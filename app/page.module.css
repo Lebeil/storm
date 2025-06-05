@@ -419,8 +419,7 @@
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
-  padding: 180px 0 100px;
+  padding: 180px 0 20px;
   color: white;
   position: relative;
   overflow: hidden;
@@ -994,6 +993,136 @@
   justify-content: center;
   font-weight: bold;
   color: #666;
+}
+
+/* Video Section */
+.videoSection {
+  position: relative;
+  padding: 60px 0 100px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  overflow: hidden;
+}
+
+.videoSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 127, 80, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(97, 234, 103, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.videoContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.videoContainer {
+  position: relative;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #2a2a3e, #1e1e2e);
+}
+
+.videoWrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--color-orange), var(--color-green), var(--color-blue));
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.5;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.videoIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit;
+}
+
+.videoDescription {
+  color: white;
+  padding-left: 20px;
+}
+
+.videoTitle {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, white, rgba(255, 255, 255, 0.8));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.videoText {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.videoText p {
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: var(--color-orange);
+  font-weight: 700;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-orange), transparent);
+  border-radius: 1px;
+}
+
+@keyframes borderGlow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Contest Section */
@@ -1660,6 +1789,20 @@
     font-size: 1.5rem;
   }
 
+  .videoContent {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .videoDescription {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .videoTitle {
+    font-size: 2rem;
+  }
+
   .contestContent {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -1706,7 +1849,7 @@
   }
 
   .hero {
-    padding: 140px 0 60px;
+    padding: 140px 0 15px;
   }
 
   .countdownContainer {
@@ -1825,6 +1968,23 @@
   .tag {
     padding: 12px 20px;
     font-size: 0.9rem;
+  }
+
+  .videoSection {
+    padding: 40px 0 60px;
+  }
+
+  .videoContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .videoTitle {
+    font-size: 1.8rem;
+  }
+
+  .videoText {
+    font-size: 1rem;
   }
 
   .basketballCourt {

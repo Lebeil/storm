@@ -261,7 +261,6 @@ export default function Home() {
 
                 <h1 className={styles.heroTitle}>
                   <span className={styles.stormText}>STORM</span>
-                  <span className={styles.theBlock}>THE BLOCK</span>
                 </h1>
 
                 <div className={styles.partnershipSection}>
@@ -348,6 +347,42 @@ export default function Home() {
                     <span>Gagner 3 places VIP</span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className={styles.videoSection}>
+        <div className="container">
+          <div className={styles.videoContent}>
+            <div className={styles.videoContainer}>
+              <div className={styles.videoWrapper}>
+                <iframe
+                  src="https://www.youtube.com/embed/M7kxjLMUw5k?start=1"
+                  title="STORM 2024 - Highlights"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className={styles.videoIframe}
+                ></iframe>
+              </div>
+            </div>
+            <div className={styles.videoDescription}>
+              <h2 className={styles.videoTitle}>
+                Quand le streetball rencontre le basketball professionnel
+              </h2>
+              <div className={styles.videoText}>
+                <p>
+                  Plongez dans l&apos;effervescence de STORM, un tournoi où la{' '}
+                  <span className={styles.highlight}>diversité des talents</span> illumine chaque match !
+                </p>
+                <p>
+                  Des <span className={styles.highlight}>professionnels</span> chevronnés aux{' '}
+                  <span className={styles.highlight}>streetballers</span> passionnés en passant par les{' '}
+                  <span className={styles.highlight}>jeunes espoirs</span> pleins de promesses, chaque rencontre promet un spectacle captivant.
+                </p>
               </div>
             </div>
           </div>
