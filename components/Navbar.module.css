@@ -1,0 +1,489 @@
+.header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 247, 250, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(7, 5, 106, 0.15);
+    border-bottom: 1px solid rgba(255, 127, 80, 0.2);
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.headerCenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.logoImage {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.logoImage:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 16px rgba(7, 5, 106, 0.3));
+}
+
+.logoLink {
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logoLink:hover {
+    transform: translateY(-2px);
+}
+
+.headerPartnerLogo {
+    display: flex;
+    align-items: center;
+}
+
+.partnerLogoHeader {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Élément VS */
+.vsElement {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #07056a, #0a0859);
+    border-radius: 50%;
+    border: 3px solid #ff7f50;
+    box-shadow:
+        0 0 20px rgba(255, 127, 80, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    animation: vsRotate 4s linear infinite;
+    z-index: 2;
+}
+
+.vsText {
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 127, 80, 0.8);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 3;
+}
+
+.vsGlow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff7f50, #61ea67, #ff7f50);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: vsGlowPulse 2s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes vsRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes vsGlowPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.headerBtn,
+.headerBtnPrimary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.headerBtn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 247, 250, 0.8));
+    color: #07056a;
+    border: 2px solid rgba(7, 5, 106, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(7, 5, 106, 0.1);
+}
+
+.headerBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 127, 80, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.headerBtn:hover::before {
+    left: 100%;
+}
+
+.headerBtn:hover {
+    background: linear-gradient(135deg, rgba(7, 5, 106, 0.1), rgba(7, 5, 106, 0.05));
+    border-color: rgba(7, 5, 106, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(7, 5, 106, 0.2);
+}
+
+.headerBtnPrimary {
+    background: linear-gradient(135deg, #ff7f50, #ff6b35);
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 0 6px 25px rgba(255, 127, 80, 0.3);
+    position: relative;
+}
+
+.headerBtnPrimary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent, rgba(255, 255, 255, 0.1));
+    border-radius: inherit;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.headerBtnPrimary:hover::before {
+    opacity: 1;
+}
+
+.headerBtnPrimary:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(255, 127, 80, 0.4);
+    background: linear-gradient(135deg, #ff6b35, #ff7f50, #ff8c69);
+}
+
+.headerBtnIcon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.headerBtn:hover .headerBtnIcon,
+.headerBtnPrimary:hover .headerBtnIcon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Compte à rebours container */
+.countdownContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.countdownHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.countdownEventTitle {
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #07056a;
+    letter-spacing: 1.5px;
+}
+
+.countdownEventDate {
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: #ff7f50;
+    letter-spacing: 1px;
+}
+
+/* Compte à rebours */
+.countdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.countdownItem {
+    position: relative;
+}
+
+.countdownCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(145deg, #07056a 0%, #0a0859 100%);
+    color: white;
+    padding: 10px 6px 6px 6px;
+    border-radius: 10px;
+    min-width: 45px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(7, 5, 106, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.countdownCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(7, 5, 106, 0.4);
+}
+
+.countdownNumber {
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdownDivider {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 127, 80, 0.6), transparent);
+    margin: 4px 0;
+}
+
+.countdownLabel {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.countdownSeparator {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ff7f50;
+    margin: 0 2px;
+    animation: pulse 2s infinite;
+}
+
+.countdownUrgency {
+    margin-top: 5px;
+}
+
+.urgencyText {
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: #ff7f50;
+    letter-spacing: 1px;
+    animation: urgencyPulse 2s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes urgencyPulse {
+
+    0%,
+    100% {
+        color: #ff7f50;
+        text-shadow: 0 0 5px rgba(255, 127, 80, 0.3);
+    }
+
+    50% {
+        color: #ff9570;
+        text-shadow: 0 0 10px rgba(255, 127, 80, 0.6);
+    }
+}
+
+.countdownAnimating {
+    animation: countdownFlip 0.3s ease-in-out;
+}
+
+@keyframes countdownFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .headerRight {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 8px 0;
+    }
+
+    .headerContent {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .headerCenter {
+        position: static;
+        transform: none;
+    }
+
+    .headerRight {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logoSection {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .logoImage {
+        width: 70px;
+        height: auto;
+    }
+
+    .headerPartnerLogo {
+        display: none;
+    }
+
+    .partnerLogoHeader {
+        width: 60px;
+        height: auto;
+    }
+
+    .headerActions {
+        gap: 15px;
+    }
+
+    .countdownContainer {
+        gap: 4px;
+    }
+
+    .countdownHeader {
+        margin-bottom: 6px;
+    }
+
+    .countdownEventTitle {
+        font-size: 0.7rem;
+    }
+
+    .countdownEventDate {
+        font-size: 0.65rem;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .countdownCard {
+        padding: 8px 4px 4px 4px;
+        min-width: 35px;
+    }
+
+    .countdownNumber {
+        font-size: 1rem;
+    }
+
+    .countdownLabel {
+        font-size: 0.6rem;
+    }
+
+    .countdownSeparator {
+        font-size: 1rem;
+        margin: 0 1px;
+    }
+
+    .urgencyText {
+        font-size: 0.65rem;
+    }
+}

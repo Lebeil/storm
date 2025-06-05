@@ -1,0 +1,173 @@
+.page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 140px 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+}
+
+.confirmationWrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.checkIcon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #28a745;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.linkSection {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.linkTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.reservationBtn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff7f50, #ff6b35);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reservationBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 127, 80, 0.4);
+}
+
+.infoBox {
+    background: #e3f2fd;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.infoTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1976d2;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.infoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infoList li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.infoList li:last-child {
+    border-bottom: none;
+}
+
+.backBtn {
+    display: inline-block;
+    color: #666;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+    color: #333;
+    border-color: #aaa;
+    background: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 200px 15px 20px;
+    }
+
+    .confirmationWrapper {
+        padding: 40px 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .message {
+        font-size: 1.1rem;
+    }
+
+    .linkSection {
+        padding: 20px;
+    }
+
+    .infoBox {
+        padding: 20px;
+    }
+}
