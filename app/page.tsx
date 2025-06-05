@@ -14,17 +14,34 @@ function ContestForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulation d'envoi
-    setTimeout(() => {
-      console.log('Formulaire soumis:', formData);
-      alert('Merci pour votre participation ! Bonne chance 🍀');
+    try {
+      // URL de votre nouveau Google Apps Script pour le concours
+      const CONTEST_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwGsC5hTfb_VwSpQ_a4hguFvOceWlhM9WOxXH-yQSkOnKghz0REghGx5UsTGjd0lY0r/exec';
+
+      const formDataToSend = new FormData();
+      formDataToSend.append('firstName', formData.firstName);
+      formDataToSend.append('email', formData.email);
+
+      await fetch(CONTEST_APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: formDataToSend,
+        mode: 'no-cors'
+      });
+
+      // Redirection vers la page de confirmation du concours
+      setTimeout(() => {
+        window.location.href = '/concours-confirmation';
+      }, 1000);
+
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Erreur lors de l\'envoi du formulaire');
       setIsSubmitting(false);
-      setFormData({ firstName: '', email: '' });
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,6 +129,21 @@ function ContestForm() {
 }
 
 export default function Home() {
+  // Fonction pour scroller vers la section Contest
+  const scrollToContest = () => {
+    const contestSection = document.getElementById('contest-section');
+    if (contestSection) {
+      // Calculer la position avec offset pour la navbar
+      const elementPosition = contestSection.offsetTop;
+      const offsetPosition = elementPosition - 120; // 120px pour la navbar fixe
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className={styles.page}>
 
@@ -252,7 +284,10 @@ export default function Home() {
                     <span>Réserver ma place</span>
                     <div className={styles.actionBtnGlow}></div>
                   </button>
-                  <button className={styles.secondaryActionBtn}>
+                  <button
+                    className={styles.secondaryActionBtn}
+                    onClick={scrollToContest}
+                  >
                     <span className={styles.actionBtnIcon}>🏆</span>
                     <span>Gagner 3 places VIP</span>
                   </button>
@@ -483,7 +518,7 @@ export default function Home() {
       </section>
 
       {/* Contest Section */}
-      <section className={styles.contest}>
+      <section id="contest-section" className={styles.contest}>
         <div className={styles.contestBackground}>
           <div className={styles.contestPattern}></div>
         </div>

@@ -142,7 +142,22 @@ export default function Navbar() {
                                 <div className={styles.vsGlow}></div>
                             </div>
 
-                            <button className={styles.headerBtnPrimary}>
+                            <button
+                                className={styles.headerBtnPrimary}
+                                onClick={() => {
+                                    const contestSection = document.getElementById('contest-section');
+                                    if (contestSection) {
+                                        // Calculer la position avec offset pour la navbar
+                                        const elementPosition = contestSection.offsetTop;
+                                        const offsetPosition = elementPosition - 120; // 120px pour la navbar fixe
+
+                                        window.scrollTo({
+                                            top: offsetPosition,
+                                            behavior: 'smooth'
+                                        });
+                                    }
+                                }}
+                            >
                                 <span className={styles.headerBtnIcon}>🏆</span>
                                 <span>Concours</span>
                             </button>

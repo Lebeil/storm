@@ -25,7 +25,7 @@ export default function ConfirmationPage() {
                             rel="noopener noreferrer"
                             className={styles.reservationBtn}
                         >
-                            🎫 Accéder à la réservation
+                            🎫 Billet gratuit
                         </a>
                     </div>
 
