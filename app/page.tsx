@@ -465,6 +465,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Programme Section */}
+      <section className={styles.programmeSection}>
+        <div className="container">
+          <h2 className={styles.programmeTitle}>AU PROGRAMME</h2>
+
+          <div className={styles.programmeGrid}>
+            <div className={styles.programmeItem}>
+              <div className={styles.programmeItemHeader}>
+                <h3 className={styles.programmeItemTitle}>Concours de Dunks & 2v2</h3>
+                <p className={styles.programmeItemSubtitle}>Énergie et show garantis !</p>
+              </div>
+            </div>
+
+            <div className={styles.programmeItem}>
+              <div className={styles.programmeItemHeader}>
+                <h3 className={styles.programmeItemTitle}>Ambiance Hip-Hop & DJ Sets</h3>
+                <p className={styles.programmeItemSubtitle}>Bangers toute la journée !</p>
+              </div>
+            </div>
+
+            <div className={styles.programmeItem}>
+              <div className={styles.programmeItemHeader}>
+                <h3 className={styles.programmeItemTitle}>Food Court avec Uncle Bumpy</h3>
+                <p className={styles.programmeItemSubtitle}>Recharge tes batteries avec de la French Soul Food (Waffle, Burger, Poulet) !</p>
+              </div>
+            </div>
+
+            <div className={styles.programmeItem}>
+              <div className={styles.programmeItemHeader}>
+                <h3 className={styles.programmeItemTitle}>Gagne ton permis & des cadeaux Adidas</h3>
+                <p className={styles.programmeItemSubtitle}>Tente ta chance pour repartir stylé !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contest Section */}
       <section className={styles.contest}>
         <div className={styles.contestBackground}>

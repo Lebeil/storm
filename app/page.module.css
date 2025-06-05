@@ -2361,3 +2361,246 @@
     font-size: 1rem;
   }
 }
+
+/* Programme Section */
+.programmeSection {
+  background:
+    linear-gradient(135deg, rgba(220, 38, 38, 0.85) 0%, rgba(234, 88, 12, 0.85) 100%),
+    url('/storm_hero.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.programmeSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(135deg, rgba(220, 38, 38, 0.7) 0%, rgba(234, 88, 12, 0.7) 100%),
+    radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.programmeSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.programmeTitle {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 3;
+}
+
+.programmeGrid {
+  display: grid;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.programmeItem {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.programmeItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.programmeItem:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-8px);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.programmeItemHeader {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.programmeItemTitle {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.programmeItemSubtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.programmeSpecialItem {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.programmeSpecialItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+.programmeSpecialHeader {
+  position: relative;
+  z-index: 1;
+}
+
+.programmeSpecialTitle {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.programmeSpecialSubtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive pour Programme */
+@media (max-width: 1024px) {
+  .programmeSection {
+    padding: 80px 0;
+  }
+
+  .programmeTitle {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+  }
+
+  .programmeGrid {
+    gap: 25px;
+  }
+
+  .programmeItem {
+    padding: 25px;
+  }
+
+  .programmeSpecialItem {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .programmeSection {
+    padding: 60px 0;
+    background-attachment: scroll;
+    /* Désactive parallax sur mobile pour de meilleures performances */
+  }
+
+  .programmeTitle {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+
+  .programmeGrid {
+    gap: 20px;
+  }
+
+  .programmeItem {
+    padding: 20px;
+  }
+
+  .programmeItemTitle {
+    font-size: 1.3rem;
+  }
+
+  .programmeItemSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .programmeSpecialItem {
+    padding: 25px;
+    margin-top: 15px;
+  }
+
+  .programmeSpecialTitle {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .programmeSpecialSubtitle {
+    font-size: 1rem;
+  }
+}
