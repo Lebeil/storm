@@ -464,6 +464,7 @@ export default function Home() {
 
                 <button
                   className={styles.adidasCtaBtn}
+                  onClick={scrollToContest}
                 >
                   <span className={styles.adidasCtaText}>PLACE VIP</span>
                 </button>
