@@ -239,7 +239,7 @@ export default function Home() {
                 <div className={styles.partnershipSection}>
                   <div className={styles.partnershipLabel}>Présenté par</div>
                   <div className={styles.partnershipBadge}>
-                    <span className={styles.instadrink}>INSTADRINK</span>
+                    <span className={styles.instadrink}>ID</span>
                     <div className={styles.partnershipGlow}></div>
                   </div>
                 </div>
