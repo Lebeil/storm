@@ -239,7 +239,7 @@ export default function Home() {
                 <div className={styles.partnershipSection}>
                   <div className={styles.partnershipLabel}>Présenté par</div>
                   <div className={styles.partnershipBadge}>
-                    <span className={styles.instadrink}>ID</span>
+                    <span className={styles.instadrink}>ID NETWORK</span>
                     <div className={styles.partnershipGlow}></div>
                   </div>
                 </div>
@@ -631,7 +631,7 @@ export default function Home() {
       {/* Advantages Section */}
       <section className={styles.advantages}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>LES AVANTAGES INSTA DRINK</h2>
+          <h2 className={styles.sectionTitle}>LES AVANTAGES ID NETWORK</h2>
           <div className={styles.advantagesGrid}>
             <div className={styles.advantageItem}>
               <div className={styles.advantageIcon}>⭐</div>
@@ -737,7 +737,7 @@ export default function Home() {
             <div className={styles.footerLogo}>
               <Image
                 src="/LOGO_INSTADRINK.webp"
-                alt="INSTADRINK"
+                alt="ID NETWORK"
                 width={120}
                 height={85}
                 className={styles.footerLogoImage}
