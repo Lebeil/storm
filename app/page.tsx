@@ -748,8 +748,8 @@ export default function Home() {
             <p>&copy; 2025 All rights reserved</p>
             <div className={styles.footerLegal}>
               <a href="#">Mentions légales</a>
-              <a href="#">Politique de confidentialité</a>
-              <a href="#">Cookie Policy</a>
+              <a href="/politique-confidentialite">Politique de confidentialité</a>
+              <a href="/politique-confidentialite">Cookie Policy</a>
             </div>
           </div>
         </div>
