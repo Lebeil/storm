@@ -18,7 +18,7 @@ export default function ConcoursConfirmationPage() {
                     <div className={styles.infoBox}>
                         <div className={styles.infoTitle}>📧 Notification par email</div>
                         <p>Si vous êtes sélectionné(e) comme gagnant(e), <strong>vous serez averti(e) par email</strong> à l&apos;adresse que vous avez fournie.</p>
-                        <p>Le tirage au sort aura lieu <strong>le 10 juin 2025</strong>, quelques jours avant l&apos;événement.</p>
+                        <p>Le tirage au sort aura lieu <strong>le 13 juin 2025</strong>, quelques jours avant l&apos;événement.</p>
                     </div>
 
                     <div className={styles.prizeInfo}>
