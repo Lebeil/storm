@@ -114,7 +114,7 @@ function ContestForm() {
           <div className={styles.socialSharing}>
             <span>Partage aussi sur :</span>
             <div className={styles.socialButtons}>
-              <a href="#" className={styles.socialBtn}>
+              <a href="https://www.instagram.com/idnetwork.io/" className={styles.socialBtn}>
                 <span>📱</span> Instagram
               </a>
               <a href="#" className={styles.socialBtn}>
